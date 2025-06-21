@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Vaishu 🎉</title>
+  <style>
+    :root {
+      --primary: #ff69b4;
+      --accent: #e63946;
+      --bg: #fff0f5;
+      --text-dark: #333;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    h1, h2 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .arrow-link {
+      font-size: 2rem;
+      margin-top: 25px;
+      color: var(--primary);
+      text-decoration: none;
+      animation: bounce 1.5s infinite;
+    }
+
+    .arrow-up {
+      margin-bottom: 30px;
+      animation: bounce-up 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(12px); }
+    }
+
+    @keyframes bounce-up {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .carousel-container {
+      max-width: 320px;
+      position: relative;
+    }
+
+    .carousel-image {
+      display: none;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .carousel-image.active {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      color: var(--primary);
+      border-radius: 50%;
+      padding: 10px 14px;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .left-arrow { left: -45px; }
+    .right-arrow { right: -45px; }
+
+    .caption {
+      margin-top: 10px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .cake {
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .cake img {
+      width: 260px;
+      border-radius: 10px;
+    }
+
+    .candles {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 14px;
+    }
+
+    .candle {
+      width: 12px; height: 30px;
+      background: #FFD580;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .flame {
+      width: 12px; height: 12px;
+      background: #fff75d;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      animation: flicker 0.4s infinite alternate;
+    }
+
+    .afterburn {
+      width: 12px; height: 12px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Fire_icon.svg/1024px-Fire_icon.svg.png') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: -12px;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .confetti-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px; height: 12px;
+      opacity: 0.9;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-20px); }
+      100% { transform: translateY(100vh); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f7f7f7;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.5rem; }
+      .arrow { font-size: 24px; padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="confetti-container" id="confetti-container"></div>
+
+<div class="section hero" id="start">
+  <h1>🎂 Happy Birthday Vaishuuu 🎂</h1>
+  <p>Scroll to celebrate your day with memories! 🎉</p>
+  <a href="#bio" class="arrow-link">⬇️</a>
+</div>
+
+<div class="section" id="bio">
+  <a href="#start" class="arrow-link arrow-up">⬆️</a>
+  <h2>Bio</h2>
+  <p>Exam se ek raat pahele padhne wali 😂, confuse rehne wali 😁</p>
+  <a href="#stories" class="arrow-link">⬇️</a>
+</div>
+
+<div class="section" id="stories">
+  <a href="#bio" class="arrow-link arrow-up">⬆️</a>
+  <h2>Stories & Moments</h2>
+  <p>Ganpati ke time pe dance… 😉😙</p>
+  <a href="#gallery" class="arrow-link">⬇️</a>
+</div>
+
+<div class="section" id="gallery">
+  <a href="#stories" class="arrow-link arrow-up">⬆️</a>
+  <h2>Gallery</h2>
+  <div class="carousel-container">
+    <div class="arrow left-arrow" id="prevBtn">❮</div>
+    <img src="images/image2.jpg" class="carousel-image active" data-caption="Our first dance 💃">
+    <img src="images/image4.jpg" class="carousel-image" data-caption="Laughing 😂">
+    <img src="images/image3.jpg" class="carousel-image" data-caption="Study 📚">
+    <img src="images/image1.jpg" class="carousel-image" data-caption=" 😅">
+    <img src="images/image5.jpg" class="carousel-image" data-caption="2024 Birthday 🎂">
+    <img src="images/image6.jpg" class="carousel-image" data-caption="Bestie 💕">
+    <div class="arrow right-arrow" id="nextBtn">❯</div>
+    <p class="caption" id="caption">Our first dance 💃</p>
+  </div>
+  <a href="#cake" class="arrow-link">⬇️</a>
+</div>
+
+<div class="section" id="cake">
+  <a href="#gallery" class="arrow-link arrow-up">⬆️</a>
+  <h2>🎂 Make a Wish!</h2>
+  <div class="cake">
+   <img src="images/cake.png" alt="Birthday Cake">
+
+    <div class="candles" style="top: 30px;"> <!-- Position adjusted -->
+      <div class="candle" onclick="blowOut(this)"><div class="flame"></div></div>
+      <div class="candle" onclick="blowOut(this)"><div class="flame"></div></div>
+      <div class="candle" onclick="blowOut(this)"><div class="flame"></div></div>
+    </div>
+  </div>
+  <a href="#wishes" class="arrow-link">⬇️</a>
+</div>
+
+<div class="section" id="wishes">
+  <a href="#cake" class="arrow-link arrow-up">⬆️</a>
+  <h2>Birthday Wishes</h2>
+  <p>You’re amazing. Happy 20th Vaishu! 💖</p>
+</div>
+
+<footer>Made with ❤️ by Your Best Friend</footer>
+
+<script>
+  // Carousel
+  const images = document.querySelectorAll('.carousel-image');
+  const caption = document.getElementById('caption');
+  let current = 0;
+
+  function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+    caption.textContent = images[index].dataset.caption;
+  }
+
+  function changeImage(dir) {
+    current = (current + dir + images.length) % images.length;
+    showImage(current);
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => changeImage(1));
+  document.getElementById('prevBtn').addEventListener('click', () => changeImage(-1));
+
+  // Confetti
+  const confettiContainer = document.getElementById('confetti-container');
+  for (let i = 0; i < 70; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'confetti';
+    dot.style.left = Math.random() * 100 + '%';
+    dot.style.animationDelay = Math.random() * 5 + 's';
+    dot.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    confettiContainer.appendChild(dot);
+  }
+
+  // Blow out candles
+  function blowOut(candle) {
+    const flame = candle.querySelector('.flame');
+    if (flame) {
+      flame.remove();
+      const fire = document.createElement('div');
+      fire.className = 'afterburn';
+      candle.appendChild(fire);
+    }
+  }
+</script>
+</body>
+</html>
