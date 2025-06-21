@@ -299,16 +299,20 @@
     confettiContainer.appendChild(dot);
   }
 
-  // Blow out candles
-  function blowOut(candle) {
-    const flame = candle.querySelector('.flame');
-    if (flame) {
-      flame.remove();
-      const fire = document.createElement('div');
-      fire.className = 'afterburn';
-      candle.appendChild(fire);
-    }
+ // Blow out candles
+function blowOut(candle) {
+  const flame = candle.querySelector('.flame');
+  if (flame) {
+    flame.remove();
+    const fire = document.createElement('div');
+    fire.className = 'afterburn';
+    candle.appendChild(fire);
   }
+}
+
+// 👇 Force scroll to top on reload
+window.onbeforeunload = () => window.scrollTo(0, 0);
+
 </script>
 </body>
 </html>
