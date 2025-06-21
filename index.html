@@ -269,6 +269,16 @@
 <footer>Made with ❤️ by Your Best Friend</footer>
 
 <script>
+
+// ✅ Force scroll to top on page load
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    window.scrollTo(0, 0);
+  });
+  
   // Carousel
   const images = document.querySelectorAll('.carousel-image');
   const caption = document.getElementById('caption');
@@ -309,9 +319,6 @@ function blowOut(candle) {
     candle.appendChild(fire);
   }
 }
-
-// 👇 Force scroll to top on reload
-window.onbeforeunload = () => window.scrollTo(0, 0);
 
 </script>
 </body>
